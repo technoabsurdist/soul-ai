@@ -1,15 +1,12 @@
-# 🖌️ Craft AI
+# 💭️ Dreams AI
 
 ## Overview
 
-This is an interactive tool that allows users to create and modify images through text-based prompts. Built with React and Express, the tool interfaces with OpenAI's image generation API. Start with a basic prompt like "Create an anime profile picture," then iteratively refine it with prompts such as "change background to blue."
-
-## Features
-
-- **Initial Image Generation**: Generate an image from a text prompt.
-- **Iterative Editing**: Modify existing image using subsequent prompts.
-- **Image Grid**: View all your generated images in a grid layout.
-- **User Feedback**: Toast notifications and loading animations provide responsive user feedback.
+Efficiently log and organize your dreams in a digital journal format. 
+Dreams.ai auto-categorizes and generates titles, tags, and images for your dreams.
+Most importantly, Dreams.ai identifies patterns and recurring themes and uses these 
+to extract insights and interpret the underlying patterns, providing a deeper psychoanalytical
+understanding of your dreams. Hop in to explore your subconscious narratives
 
 ## Installation and Setup
 

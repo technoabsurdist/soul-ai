@@ -1,0 +1,22 @@
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+}
+
+.menu-option {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.menu-option:hover {
+    color: #0070f3;
+}
