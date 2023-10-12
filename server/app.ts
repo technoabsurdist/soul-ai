@@ -1,10 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import axios from 'axios';
 import bcrypt from 'bcrypt';
 import { Pool } from 'pg';
+import dotenv from 'dotenv';
 
 const app = express();
+dotenv.config(); 
 
 app.use(express.json());
 app.use(cors({
@@ -13,11 +14,11 @@ app.use(cors({
 }));
 
 const pool = new Pool({
-    user: 'username',
-    host: 'localhost',
-    database: 'your_database',
-    password: 'password',
-    port: 5432,
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  // user: process.env.DB_USER,
+  // password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 app.post('/login', async (req, res) => {
@@ -33,6 +34,17 @@ app.post('/login', async (req, res) => {
 
     res.send('Logged in successfully!');
 });
+
+app.get('/test-db', async (req, res) => {
+  try {
+      const response = await pool.query('SELECT NOW() as now');
+      res.send(`Database connected at ${response.rows[0].now}`);
+  } catch (error) {
+      console.error('Database connection error:', error);
+      res.status(500).send('Failed to connect to the database.');
+  }
+});
+
 app.listen(5001, () => {
   console.log('Server running on http://localhost:5001');
 });

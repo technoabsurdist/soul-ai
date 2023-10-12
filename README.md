@@ -16,10 +16,6 @@ Dream Digital Journal is an intuitive platform designed to simplify and enhance 
 
 Built with React:
 
-### Components
-- **Login**: A user-friendly login system.
-- **TypeformEmbed**: (Further details required).
-
 ### Setup
 
 ```bash
