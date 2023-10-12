@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import Login from './components/Login';
 import Home from './components/Home';
 import SideNav from './components/SideNav';
+import ProfileBar from './components/ProfileBar';
 
 interface MainProps {
     userPermission: boolean;
@@ -24,6 +25,9 @@ const Main = ({ userPermission }: MainProps) => {
                         <SideNav /> 
                     </div>
                     <Home />
+                    <div className={styles.navbarProfile}>
+                        <ProfileBar /> 
+                    </div>
                 </>
                  
             ) : (
