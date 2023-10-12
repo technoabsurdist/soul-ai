@@ -24,7 +24,7 @@
 }
 
 .profileItem {
-  padding: 8px 8px 8px 16px;  
+  padding: 10px 10px 0px 0px;  
   text-decoration: none;  
   line-height: 16px;
   font-size: 15px;  
@@ -35,6 +35,18 @@
   text-decoration: underline;
 }
 
+.profileImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px; 
+  text-align: right; 
+  align-items: right;
+  align-content: right;
+  margin-bottom: 5px;
+  position: relative;
+  left: 66px;
+  top: 0px;
+}
 .navbarItem:hover {
   color: #4d4d4d;
 }
