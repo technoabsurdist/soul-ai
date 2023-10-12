@@ -19,24 +19,6 @@ export const Main = ({ userPermission }: MainProps) => {
         <>
             <main className={styles.main}>
 
-            <img src="/dreams2.png" className={styles.image} alt="Dreams" width={450} height={450} />
-            <p className={styles.description}>
-            <span>
-                Dive into the intricate tapestry of your mind by analyzing dream motifs and patterns. <br /> 
-            </span>
-            <span>
-                Input a dream into our AI-powered journal, no matter how vague or detailed. <br />
-            </span>
-            <span>
-                Leveraging cutting-edge natural language processing, we identify patterns, highlight 
-            </span>
-            <span>
-                recurring motifs, and categorize them with precise titles, tags, and visuals. <br />  
-            </span>
-            <span>
-                Unravel your inner narratives through the lens of AI.
-            </span>
-            </p>
             {hasPermission ? ( 
                 <>
                     <PromptInput 
@@ -45,9 +27,29 @@ export const Main = ({ userPermission }: MainProps) => {
                     <MenuOptions />
                 </>
             ) : (
+                <>
+                <img src="/dreams2.png" className={styles.image} alt="Dreams" width={450} height={450} />
+                <p className={styles.description}>
+                <span>
+                    Dive into the intricate tapestry of your mind by analyzing dream motifs and patterns. <br /> 
+                </span>
+                <span>
+                    Input a dream into our AI-powered journal, no matter how vague or detailed. <br />
+                </span>
+                <span>
+                    Leveraging cutting-edge natural language processing, we identify patterns, highlight 
+                </span>
+                <span>
+                    recurring motifs, and categorize them with precise titles, tags, and visuals. <br />  
+                </span>
+                <span>
+                    Unravel your inner narratives through the lens of AI.
+                </span>
+                </p>
                 <Login 
                     handleUserLogin={handleUserLogin}
                 /> 
+                </>
             )}
             </main>
             <style jsx>{`
