@@ -1,10 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { PromptInput } from './components/PromptInput';
-import MenuOptions from './components/MenuOptions';
-import { WaitlistInput } from './components/WaitlistInput';
 import { useState } from 'react';
-import { Login } from './components/Login';
 import { Main } from './Main';
 
 interface HomeProps {

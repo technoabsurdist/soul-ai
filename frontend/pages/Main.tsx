@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import styles from '../styles/Home.module.css'
 import { Login } from './components/Login';
-import { PromptInput } from './components/PromptInput';
-import MenuOptions from './components/MenuOptions';
-import { WaitlistInput } from './components/WaitlistInput';
-import "@fontsource/montserrat";
+import Home from './components/Home';
+import { SideNav } from './components/SideNav';
 
 interface MainProps {
     userPermission: boolean;
@@ -21,11 +19,12 @@ export const Main = ({ userPermission }: MainProps) => {
 
             {hasPermission ? ( 
                 <>
-                    <PromptInput 
-                        prompt="Tell me about your dream..."
-                    /> 
-                    <MenuOptions />
+                    <div className={styles.navbar2}>
+                        <SideNav /> 
+                    </div>
+                    <Home />
                 </>
+                 
             ) : (
                 <>
                 <img src="/dreams2.png" className={styles.image} alt="Dreams" width={450} height={450} />
