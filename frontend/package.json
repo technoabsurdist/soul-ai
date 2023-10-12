@@ -1,17 +1,19 @@
 {
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
-    "start": "next start"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@mui/icons-material": "^5.14.13",
     "@mui/material": "^5.14.13",
     "date-fns": "^2.30.0",
-    "next": "latest",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "next": "^13.5.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vercel": "^32.4.1"
   },
   "engines": {
     "node": ">=18"

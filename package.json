@@ -5,5 +5,11 @@
   "dependencies": {
     "@fontsource/montserrat": "^5.0.13",
     "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   }
 }
