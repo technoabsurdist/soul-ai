@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import styles from '../styles/Home.module.css'
-import { Login } from './components/Login';
+import Login from './components/Login';
 import Home from './components/Home';
-import { SideNav } from './components/SideNav';
+import SideNav from './components/SideNav';
 
 interface MainProps {
     userPermission: boolean;
 }
-export const Main = ({ userPermission }: MainProps) => {
+
+const Main = ({ userPermission }: MainProps) => {
     const [hasPermission, setHasPermission] = useState<boolean>(userPermission);
 
     const handleUserLogin = (email: string, password: string) => {
@@ -104,3 +105,5 @@ export const Main = ({ userPermission }: MainProps) => {
         </>
     )
 }
+
+export default Main;

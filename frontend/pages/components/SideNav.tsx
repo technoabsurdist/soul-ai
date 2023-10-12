@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from '../../styles/Home.module.css';
 
-export const SideNav = () => {
+const SideNav = () => {
     return (
         <div className={styles.navbarParent}>
             <div>
@@ -18,3 +18,5 @@ export const SideNav = () => {
         
     )
 }
+
+export default SideNav

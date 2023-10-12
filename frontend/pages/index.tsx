@@ -1,15 +1,9 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
-import { Main } from './Main';
+import Main from './Main';
 
-interface HomeProps {
-    userPermission: boolean;
-}
-
-export default function Home({ userPermission }: HomeProps) {
-
-    const [hasPermission, setHasPermission] = useState<boolean>(userPermission);
+export default function Home() {
 
     return (
         <div className={styles.container}>

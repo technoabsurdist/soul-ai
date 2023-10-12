@@ -5,7 +5,7 @@ import TypeformEmbed from './TypeformEmbed';
 interface LoginProps {
     handleUserLogin: (email: string, password: string) => void;
 }
-export const Login = ({ handleUserLogin }: LoginProps) => {
+const Login = ({ handleUserLogin }: LoginProps) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -70,3 +70,5 @@ export const Login = ({ handleUserLogin }: LoginProps) => {
         </div>
     );
 }
+
+export default Login;

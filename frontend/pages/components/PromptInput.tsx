@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from './PromptInput.module.css';
 
-export const PromptInput = ({ prompt }) => {
+const PromptInput = ({ prompt }) => {
   const [value, setValue] = useState('');
 
    return (
@@ -15,3 +15,5 @@ export const PromptInput = ({ prompt }) => {
     </div>
   );
 };
+
+export default PromptInput;

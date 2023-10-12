@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from "../../styles/Home.module.css"
-import { SideNav } from './SideNav';
-import { PromptInput } from './PromptInput';
+import PromptInput from './PromptInput';
 
 const Home = () => {
     return (
