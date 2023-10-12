@@ -2,9 +2,9 @@
   <img src="./frontend/public/dreams2.png" alt="Dreams AI Logo" width="300">
 </p>
 
-# Dream Digital Journal
+# Dreams AI 
 
-Dream Digital Journal is an intuitive platform designed to simplify and enhance your dream logging experience. Users can input dream details and benefit from automatic title, tag, and image generation, with the core feature offering profound insights into the deeper psychological implications of your dreams. Dive into your subconscious and uncover unique narratives with Dream Digital Journal.
+Dreams AI is an intuitive platform designed to simplify and enhance your dream logging experience. Users can input dream details and benefit from automatic title, tag, and image generation, with the core feature offering profound insights into the deeper psychological implications of your dreams. Dive into your subconscious and uncover unique narratives with Dream Digital Journal.
 
 ## Features
 
