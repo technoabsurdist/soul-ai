@@ -5,12 +5,8 @@ import Home from './components/Home';
 import SideNav from './components/SideNav';
 import ProfileBar from './components/ProfileBar';
 
-interface MainProps {
-    userPermission: boolean;
-}
-
-const Main = ({ userPermission }: MainProps) => {
-    const [hasPermission, setHasPermission] = useState<boolean>(userPermission);
+const Main = () => {
+    const [hasPermission, setHasPermission] = useState<boolean>(true);
 
     const handleUserLogin = (email: string, password: string) => {
         setHasPermission(true);

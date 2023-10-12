@@ -8,7 +8,6 @@ interface LoginProps {
 const Login = ({ handleUserLogin }: LoginProps) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -21,7 +20,6 @@ const Login = ({ handleUserLogin }: LoginProps) => {
             
             if(response.ok) {
                 console.log('login success')
-                setIsLoggedIn(true); 
                 handleUserLogin(email, password)
             } else {
                 console.error('error')
@@ -34,12 +32,6 @@ const Login = ({ handleUserLogin }: LoginProps) => {
 
     return (
         <div>
-            {isLoggedIn ? (
-            <div>
-                <h2>Welcome, User!</h2>
-                <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-            </div>
-        ) : (
             <>
                 <form onSubmit={handleLogin} className={styles.formContainer}>
                     <input 
@@ -66,7 +58,6 @@ const Login = ({ handleUserLogin }: LoginProps) => {
                 </button>
                 <TypeformEmbed /> 
             </>
-        )}
         </div>
     );
 }

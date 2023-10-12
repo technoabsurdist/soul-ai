@@ -6,16 +6,21 @@ const SideNav = () => {
     return (
         <div className={styles.navbarParent}>
             <div>
-                <Link className={styles.navbarItem} href="">All Dreams</Link>
+                <Link className={styles.navbarItem} href="/dreams">
+                    All Dreams 
+                </Link>
             </div>
             <div>
-                <Link className={styles.navbarItem} href="">Analysis</Link>
+                <Link className={styles.navbarItem} href="/analysis">
+                    Analysis
+                </Link>
             </div>
             <div>
-                <Link className={styles.navbarItem} href="">About</Link>
+                <Link className={styles.navbarItem} href="/about">
+                  About
+                </Link>
             </div>
         </div>
-        
     )
 }
 
