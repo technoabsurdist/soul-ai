@@ -1,0 +1,45 @@
+/* components/Login.module.css */
+
+.input {
+    margin: 0.3rem 0;
+    padding: 0.8rem;
+    padding-right: 8rem; 
+    font-size: 0.8rem; 
+    border: 1.5px solid #969696;
+    border-radius: 4px;
+}
+
+.button {
+    margin: 0.1rem 0;
+    padding: 0.55rem 3rem;
+    margin-left: 0.1rem;
+    margin-right: 0.3rem;
+    background-color: #2fa0d6;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0050b3;
+}
+
+.link {
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: #0070f3;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Adjust if needed */
+    margin: 0.5rem 0;
+}
