@@ -16,17 +16,17 @@ function TypeformEmbed() {
    }, []);
 
    return (
-        <button
+        <a
             data-tf-popup="EaIyXHDi"
             data-tf-opacity="100"
             data-tf-size="100"
             data-tf-iframe-props="title=Dreams Typeform"
             data-tf-transitive-search-params
             data-tf-medium="snippet"
-            className={styles.button}
+            className={styles.waitlist}
         >
             Waitlist
-        </button>
+        </a>
    );
 }
 

@@ -114,12 +114,43 @@
   height: 1em;
 }
 
+/* Existing .description styling */
 .description {
   line-height: 1.5;
   font-size: 1.1rem;
-  max-width: 63%;
+  max-width: 100%;
   color: #757575;
 }
+
+/* Typewriter effect styles */
+.description span {
+  display: block;
+  overflow: hidden;
+  /* border-right: .15em solid #757575; Simulates the blinking cursor */ 
+  white-space: nowrap;
+  /* animation: typewriter 4s steps(40, end) forwards, blink-caret .75s step-end infinite; */
+}
+
+/* Typewriter keyframes */
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 200%;
+  }
+}
+
+/* Blinking cursor keyframes */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #757575;
+  }
+}
+
 
 @media (max-width: 600px) {
   .grid {

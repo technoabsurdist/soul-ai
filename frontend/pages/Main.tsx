@@ -11,17 +11,31 @@ interface MainProps {
 }
 export const Main = ({ userPermission }: MainProps) => {
     const [hasPermission, setHasPermission] = useState<boolean>(userPermission);
+
+    const handleUserLogin = (email: string, password: string) => {
+        setHasPermission(true);
+    }
     return (
         <>
             <main className={styles.main}>
 
             <img src="/dreams2.png" className={styles.image} alt="Dreams" width={450} height={450} />
             <p className={styles.description}>
-            Efficiently catalog your dreams in a digital journal. 
-            Input your dream details, and we will craft titles, tags, and accompanying images. 
-            Most importantly, by recognizing patterns, entities, and recurring motifs, 
-            receive insights and delve into the deeper psychological meanings of your dreams. 
-            Dive in to explore your subconscious narratives through the power of AI.
+            <span>
+                Dive into the intricate tapestry of your mind by analyzing dream motifs and patterns. <br /> 
+            </span>
+            <span>
+                Input a dream into our AI-powered journal, no matter how vague or detailed. <br />
+            </span>
+            <span>
+                Leveraging cutting-edge natural language processing, we identify patterns, highlight 
+            </span>
+            <span>
+                recurring motifs, and categorize them with precise titles, tags, and visuals. <br />  
+            </span>
+            <span>
+                Unravel your inner narratives through the lens of AI.
+            </span>
             </p>
             {hasPermission ? ( 
                 <>
@@ -31,7 +45,9 @@ export const Main = ({ userPermission }: MainProps) => {
                     <MenuOptions />
                 </>
             ) : (
-                <Login /> 
+                <Login 
+                    handleUserLogin={handleUserLogin}
+                /> 
             )}
             </main>
             <style jsx>{`

@@ -2,26 +2,29 @@ import React, { useState } from 'react';
 import styles from './Login.module.css';
 import TypeformEmbed from './TypeformEmbed';
 
-export const Login = () => {
+interface LoginProps {
+    handleUserLogin: (email: string, password: string) => void;
+}
+export const Login = ({ handleUserLogin }: LoginProps) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-    
         try {
-            const response = await fetch('http://localhost:3001/login', {
+            const response = await fetch('http://localhost:5001/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
             });
             
             if(response.ok) {
-                console.log('success')
-                // Handle successful login, e.g., navigate to dashboard
+                console.log('login success')
+                setIsLoggedIn(true); 
+                handleUserLogin(email, password)
             } else {
                 console.error('error')
-                // Handle error, display an error message to the user
             }
         } catch (error) {
             console.error('Error logging in:', error);
@@ -31,25 +34,39 @@ export const Login = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className={styles.formContainer}>
-                <input 
-                    type="email" 
-                    placeholder="Email" 
-                    value={email} 
-                    onChange={e => setEmail(e.target.value)} 
-                    className={styles.input}
-                />
-                <input 
-                    type="password" 
-                    placeholder="Password" 
-                    value={password} 
-                    onChange={e => setPassword(e.target.value)}
-                    className={styles.input} 
-                />
-             </form>
-            <button type="submit" className={styles.button}>Log In</button>
-            <TypeformEmbed /> 
-        
+            {isLoggedIn ? (
+            <div>
+                <h2>Welcome, User!</h2>
+                <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+            </div>
+        ) : (
+            <>
+                <form onSubmit={handleLogin} className={styles.formContainer}>
+                    <input 
+                        type="email" 
+                        placeholder="Email" 
+                        value={email} 
+                        onChange={e => setEmail(e.target.value)} 
+                        className={styles.input}
+                    />
+                    <input 
+                        type="password" 
+                        placeholder="Password" 
+                        value={password} 
+                        onChange={e => setPassword(e.target.value)}
+                        className={styles.input} 
+                    />
+                </form>
+                <button 
+                    type="submit" 
+                    onClick={handleLogin} 
+                    className={styles.button}
+                >
+                    Log In
+                </button>
+                <TypeformEmbed /> 
+            </>
+        )}
         </div>
     );
 }

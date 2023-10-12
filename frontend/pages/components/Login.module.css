@@ -2,36 +2,48 @@
 
 .input {
     margin: 0.3rem 0;
-    padding: 0.8rem;
-    padding-right: 8rem; 
-    font-size: 0.8rem; 
+    padding: 0.6rem;
+    padding-right: 3rem; 
+    font-size: 1.2rem; 
+    color: #5f5f5f;
     border: 1.5px solid #969696;
     border-radius: 4px;
+    width: 100%;
 }
 
 .button {
-    margin: 0.1rem 0;
-    padding: 0.55rem 3rem;
-    margin-left: 0.1rem;
-    margin-right: 0.3rem;
+    margin: 0rem 0;
+    margin-top: 0.3rem; 
+    margin-bottom: 0.3rem;
+    padding: 0.55rem;
     background-color: #2fa0d6;
+    font-size: 1rem; 
     color: white;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    width: 100%; /* Button takes the full width */
 }
 
 .button:hover {
     background-color: #0050b3;
 }
 
-.link {
-    margin-left: 0.5rem;
+.waitlist {
+    margin: 0.2rem 0;
+    font-size: 0.8rem;
+    color: #5f5f5f; /* Using the same gray */
     text-decoration: none;
-    color: #0070f3;
+    cursor: pointer;
+    text-align: center; /* Centers the text */
+    text-decoration: underline;
+    /* font-style: italic; Sets text to italics */ 
+    display: block; /* Makes sure it takes up the full width so the text-align works */
+    width: 100%; /* Ensures it aligns with the width of the other components */
 }
 
-.link:hover {
+
+.waitlist:hover {
     text-decoration: underline;
 }
 
@@ -40,6 +52,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 300px; /* Adjust if needed */
-    margin: 0.5rem 0;
+    max-width: 300px;
+    margin: 0.8rem 0;
 }
