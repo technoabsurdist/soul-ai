@@ -4,8 +4,6 @@
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .navbar {
@@ -13,21 +11,28 @@
 }
 
 .navbarItem {
-  padding: 8px 8px 8px 16px;  
+  padding: 15px 8px 8px 2px;  
   text-decoration: none;  
-  line-height: 16px;
-  font-size: 18px;  
+  line-height: 6px;
+  margin-bottom: 5px; 
+  font-size: 16px;  
   color: #818181;  
   display: block;  
   transition: 0.3s;  
   text-align: left;
 }
 
+.iconWithText {
+  display: flex;
+  align-items: center;
+}
+
+
 .profileItem {
-  padding: 10px 10px 0px 0px;  
+  padding: 10px 5px 0px 0px;  
   text-decoration: none;  
-  line-height: 16px;
-  font-size: 15px;  
+  line-height: 10px;
+  font-size: 8px;  
   color: #818181;  
   display: block;  
   transition: 0.3s;  
@@ -36,17 +41,18 @@
 }
 
 .profileImage {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   border-radius: 5px; 
   text-align: right; 
   align-items: right;
   align-content: right;
   margin-bottom: 5px;
   position: relative;
-  left: 66px;
+  left: 85px;
   top: 0px;
 }
+
 .navbarItem:hover {
   color: #4d4d4d;
 }
@@ -214,7 +220,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  padding: 10rem 5%;
   background: linear-gradient(to right, #ffffff, #f3f4f6);
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -248,7 +254,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 6rem; 
   align-items: center;
 }
 
@@ -276,7 +282,7 @@
 }
 
 .navbarParent {
-  padding: 1rem; 
+  padding: 2rem; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;

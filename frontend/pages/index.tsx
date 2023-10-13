@@ -11,7 +11,7 @@ export default function Home() {
             <Head>
                 <title>Dreams 💭️</title>
             </Head>
-            <Main userPermission={false} /> 
+            <Main /> 
         </div>
     );
 }

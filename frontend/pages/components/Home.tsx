@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "../../styles/Home.module.css"
 import PromptInput from './PromptInput';
+import BottomHomePage from './BottomHomePage';
 
 const Home = () => {
+
+    const [showPrompt, setShowPrompt] = useState(false)
+
     return (
         <>
                 <main className={styles.mainContent}>
-                    <PromptInput 
+                    {showPrompt && <PromptInput 
                         prompt="Tell me about your dream..."
-                    /> 
+                    />}
                 </main>
+                <div>
+                    <BottomHomePage />
+                </div>
         </>
        
     );
