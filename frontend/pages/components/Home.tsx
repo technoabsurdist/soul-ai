@@ -4,7 +4,7 @@ import PromptInput from './PromptInput';
 
 const Home = () => {
 
-    const [showPrompt, setShowPrompt] = useState(true)
+    const [showPrompt, _] = useState(true)
 
     return (
         <>

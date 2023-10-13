@@ -1,0 +1,54 @@
+.title {
+    /* Your title styles here */
+  }
+  
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5rem;
+}
+
+.square {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 15px; 
+    background-color: #ededed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    align-items: center; /* added property */
+}
+
+.docTitle {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    align-items: center; /* added property */
+    width: 60%; 
+}
+
+.docText {
+    font-size: 0.7rem;
+    width: 60%; 
+    align-items: center; /* added property */
+}
+.expandedSquare {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    text-align: center;
+    overflow-y: auto;
+  }
+  

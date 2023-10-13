@@ -3,6 +3,8 @@ import styles from '../styles/Home.module.css'
 import Login from './components/Login';
 import Home from './components/Home';
 import SideNav from './components/SideNav';
+import Archive from './components/Archive';
+import Analysis from './components/Analysis';
 
 export enum View {
     HOME,
@@ -11,7 +13,7 @@ export enum View {
 }
 
 const Main = () => {
-    const [hasPermission, setHasPermission] = useState<boolean>(true);
+    const [hasPermission, setHasPermission] = useState<boolean>(false);
     const [view, setView] = useState<View>(View.HOME);
 
     const handleUserLogin = (email: string, password: string) => {
@@ -31,7 +33,9 @@ const Main = () => {
                     <div className={styles.navbar2}>
                         <SideNav handleSetView={handleSetView} /> 
                     </div>
-                    <Home />
+                    {view === View.HOME && <Home />}
+                    {view === View.ARCHIVE && <Archive />}
+                    {view === View.ANALYSIS && <Analysis />}
                 </>
                  
             ) : (

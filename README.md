@@ -4,11 +4,11 @@
 
 # Dreams AI 
 
-Dreams AI is an intuitive platform designed to simplify and enhance your dream logging experience. Users can input dream details and benefit from automatic title, tag, and image generation, with the core feature offering profound insights into the deeper psychological implications of your dreams. Dive into your subconscious and uncover unique narratives with Dream Digital Journal.
+Dreams AI is an intuitive platform designed to simplify and enhance your dream logging experience. Users can input dream details and benefit from automatic title, tag, and image generation, with the core feature offering profound insights into the deeper psychological implications of your dreams. Dive into your subconscious and uncover unique narratives with Dreams AI.
 
 ## Features
 
-- **Digital Dream Logging**: Streamlined process for dream documentation in a user-friendly digital format.
+- **Dream Logging**: Streamlined process for dream documentation in a user-friendly digital format.
 - **Automated Title, Tag, and Image Generation**: Effortless organization of your dream entries.
 - **Deep Dream Analysis**: Identification and interpretation of patterns, entities, and recurring motifs.
 
