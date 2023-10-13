@@ -23,7 +23,7 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
             <div className={styles.iconWithText}>
                 <NewIcon /> 
                 <span className={styles.navbarItem} onClick={() => handleSetView(View.HOME)}>
-                   New dream 
+                   New Note
                 </span>
             </div>
             <div className={styles.iconWithText}>
@@ -34,8 +34,8 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
             </div>
             <div className={styles.iconWithText}>
                 <AnalysisIcon /> 
-                <span className={styles.navbarItem} onClick={() => handleSetView(View.ANALYSIS)}>
-                    Analysis
+                <span className={styles.navbarItem} onClick={() => handleSetView(View.INSIGHTS)}>
+                   Insights 
                 </span>
             </div>
             <div className={styles.divider}>

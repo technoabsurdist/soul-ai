@@ -9,11 +9,11 @@ import Analysis from './components/Analysis';
 export enum View {
     HOME,
     ARCHIVE,
-    ANALYSIS
+    INSIGHTS, 
 }
 
 const Main = () => {
-    const [hasPermission, setHasPermission] = useState<boolean>(false);
+    const [hasPermission, setHasPermission] = useState<boolean>(true);
     const [view, setView] = useState<View>(View.HOME);
 
     const handleUserLogin = (email: string, password: string) => {
@@ -35,7 +35,7 @@ const Main = () => {
                     </div>
                     {view === View.HOME && <Home />}
                     {view === View.ARCHIVE && <Archive />}
-                    {view === View.ANALYSIS && <Analysis />}
+                    {view === View.INSIGHTS && <Analysis />}
                 </>
                  
             ) : (
@@ -43,19 +43,16 @@ const Main = () => {
                 <img src="/dreams2.png" className={styles.image} alt="Dreams" width={450} height={450} />
                 <p className={styles.description}>
                 <span>
-                    Dive into the intricate tapestry of your mind by analyzing dream motifs and patterns. <br /> 
+                    Dive into the intricate tapestry of your mind by analyzing journal entries and patterns. <br /> 
                 </span>
                 <span>
-                    Input a dream into our AI-powered journal, no matter how vague or detailed. <br />
+                    Input a thought, mood, or event into our AI-powered journal, no matter how vague or detailed.<br />
                 </span>
                 <span>
-                    Leveraging cutting-edge natural language processing, we identify patterns, highlight 
+                    Using NLP models, we categorize your thoughts and identify patterns based on deep insights.
                 </span>
                 <span>
-                    recurring motifs, and categorize them with precise titles, tags, and visuals. <br />  
-                </span>
-                <span>
-                    Unravel your inner narratives through the lens of AI.
+                    Crucially, we offer insights that demystify your subconscious, bringing clarity to your inner world.
                 </span>
                 </p>
                 <Login 

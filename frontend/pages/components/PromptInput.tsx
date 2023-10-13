@@ -48,7 +48,7 @@ const PromptInput = ({ prompt }) => {
         ref={textAreaRef}
         className={`${styles.titleColorBorder} ${styles.expandedTextArea}`}
         value={value}
-        placeholder={"Tell me about your dream..."}
+        placeholder={"What are you thinking..."} 
         onChange={handleTextChange}
       />
       <button onClick={submitEntry}>

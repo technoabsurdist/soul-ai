@@ -54,14 +54,14 @@ app.post('/login', async (req, res) => {
 
 app.post('/entry', async (req, res) => {
   const { text, title } = req.body;
-  const userId = req.session.userId;
+  // const userId = req.session.userId; // TODO
+  const userId = 1; 
   const result = await pool.query('INSERT INTO documents (text, title, user_id) VALUES ($1, $2, $3) RETURNING *', [text, title, userId]);
   res.send(result.rows[0]);
 }); 
 
 app.get('/entry', async (req, res) => {
-  console.log("Hitting the get route")
-  // const userId = req.session.userId;
+  // const userId = req.session.userId; // TODO
   const userId = 1; 
   if (!userId) return res.status(401).send('Unauthorized');
   try {
