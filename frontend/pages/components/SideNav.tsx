@@ -18,22 +18,20 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
     const [profileData, setProfileData] = useState({ name: "", email: "" });
 
     useEffect(() => {
-        // Fetch profile data from API when the component mounts
         const fetchData = async () => {
             const response = await fetch('http://localhost:5001/user', {
                 credentials: 'include',
             });
-            const data = await response.json();
-            const username = data.email.split("@")[0]; 
-            const name = (username.charAt(0).toUpperCase() + username.slice(1))|| "Unknown";
+            const data = await response.json(); 
+            const username = data.name || data.email.split("@")[0]; 
             setProfileData({
-                name: name || "Unknown",
+                name: (username.charAt(0).toUpperCase() + username.split(1)) || "Unknown",
                 email: data.email || "unknown@example.com",
             });
         };
 
         fetchData();
-    }, []); // Empty dependency array means this useEffect runs once when the component mounts
+    }, []); 
 
     return (
         <div className={styles.navbarParent}>
