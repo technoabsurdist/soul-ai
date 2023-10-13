@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import styles from './Archive.module.css'; // Assuming you have a CSS module for Archive
+import styles from './Archive.module.css';
 
 const Archive = () => {
   const [documents, setDocuments] = useState([]);

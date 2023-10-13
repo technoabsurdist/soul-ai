@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
 import session from 'express-session';
+import * as helpers from './helpers';
 
 declare module 'express-session' {
   interface Session {
@@ -72,7 +73,8 @@ app.post('/signup', async (req, res) => {
 });
 
 app.post('/entry', async (req, res) => {
-  const { text, title } = req.body;
+  const { text } = req.body;
+  const title = await helpers.generateTitle(text); 
   const userId = req.session.userId; 
   const result = await pool.query('INSERT INTO documents (text, title, user_id) VALUES ($1, $2, $3) RETURNING *', [text, title, userId]);
   res.send(result.rows[0]);
