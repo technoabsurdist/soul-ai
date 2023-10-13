@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from "../../styles/Home.module.css"
 import PromptInput from './PromptInput';
-import BottomHomePage from './BottomHomePage';
 
 const Home = () => {
 
@@ -15,7 +14,6 @@ const Home = () => {
                 />}
             </main>
             <div>
-                {/* <BottomHomePage /> */}
             </div>
         </>
        

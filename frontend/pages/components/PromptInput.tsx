@@ -5,7 +5,7 @@ const PromptInput = ({ prompt }) => {
   const [value, setValue] = useState('');
   const textAreaRef = useRef(null);
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e: any) => {
     setValue(e.target.value);
     resizeTextArea();
   };
@@ -18,8 +18,29 @@ const PromptInput = ({ prompt }) => {
   };
 
   useEffect(() => {
-    resizeTextArea();
+      resizeTextArea();
   }, [value]);
+
+  const submitEntry = async (e: React.FormEvent) => {
+    e.preventDefault(); 
+    try {
+      const title = 'Testing Title 1';
+      const response = await fetch('http://localhost:5001/entry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify({ title: title, text: value }),
+      })
+      if (response.ok) {
+        console.log('entry success');
+        setValue('');  // Clear the text area
+        window.alert('Dream submitted');  // Show an alert
+      } else {
+        console.error('error');
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+    }
+  }
 
   return (
     <div className={styles.inputWrapper}>
@@ -30,6 +51,9 @@ const PromptInput = ({ prompt }) => {
         placeholder={"Tell me about your dream..."}
         onChange={handleTextChange}
       />
+      <button onClick={submitEntry}>
+        Submit
+      </button>
     </div>
   );
 };
