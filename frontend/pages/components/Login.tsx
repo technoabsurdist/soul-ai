@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Login.module.css';
 import TypeformEmbed from './TypeformEmbed';
+import SignUp from './SignUp';
 
 interface LoginProps {
     handleUserLogin: (email: string, password: string) => void;
@@ -56,7 +57,10 @@ const Login = ({ handleUserLogin }: LoginProps) => {
                 >
                     Log In
                 </button>
-                <TypeformEmbed /> 
+                <div className={styles.divBottom}>
+                    <TypeformEmbed /> 
+                    <SignUp /> 
+                </div>
             </>
         </div>
     );

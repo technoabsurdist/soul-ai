@@ -33,7 +33,7 @@ const PromptInput = ({ prompt }) => {
       if (response.ok) {
         console.log('entry success');
         setValue('');  // Clear the text area
-        window.alert('Dream submitted');  // Show an alert
+        window.alert('Submitted!');  // Show an alert
       } else {
         console.error('error');
       }

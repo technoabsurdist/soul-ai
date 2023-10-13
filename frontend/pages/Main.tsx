@@ -15,7 +15,7 @@ export enum View {
 }
 
 const Main = () => {
-    const [hasPermission, setHasPermission] = useState<boolean>(true);
+    const [hasPermission, setHasPermission] = useState<boolean>(false);
     const [view, setView] = useState<View>(View.HOME);
 
     const handleUserLogin = (email: string, password: string) => {

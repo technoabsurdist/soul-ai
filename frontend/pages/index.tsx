@@ -9,7 +9,7 @@ export default function Home() {
         <div className={styles.container}>
 
             <Head>
-                <title>Dreams 💭️</title>
+                <title>Soul AI</title>
             </Head>
             <Main /> 
         </div>

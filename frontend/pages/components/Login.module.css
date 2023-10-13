@@ -1,13 +1,13 @@
 /* components/Login.module.css */
 
 .input {
-    margin: 0.3rem 0;
+    margin: 0.2rem 0;
     padding: 0.6rem;
     padding-right: 3rem; 
-    font-size: 1.2rem; 
+    font-size: 1.1rem; 
     color: #5f5f5f;
     border: 1.5px solid #969696;
-    border-radius: 10px;
+    border-radius: 6px;
     width: 100%; 
 }
 
@@ -20,13 +20,18 @@
     font-size: 1rem; 
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%; /* Button takes the full width */
 }
 
 .button:hover {
     background-color: #0050b3;
+}
+
+.divBottom {
+    width: 100%; 
+    text-align: center; 
 }
 
 .waitlist {
@@ -40,8 +45,23 @@
     /* font-style: italic; Sets text to italics */ 
     display: block; /* Makes sure it takes up the full width so the text-align works */
     width: 100%; /* Ensures it aligns with the width of the other components */
+    display: inline;
 }
 
+.waitlistAndSignup {
+    margin: 0.2rem 0;
+    font-size: 0.8rem;
+    color: #5f5f5f; /* Using the same gray */
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center; /* Centers the text */
+    text-decoration: underline;
+    /* font-style: italic; Sets text to italics */ 
+    display: block; /* Makes sure it takes up the full width so the text-align works */
+    width: 100%; /* Ensures it aligns with the width of the other components */
+    display: inline;
+    margin-left: 1rem; 
+}
 
 .waitlist:hover {
     text-decoration: underline;
