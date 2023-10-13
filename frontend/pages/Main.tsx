@@ -51,16 +51,16 @@ const Main = () => {
                 <img src="/dreams2.png" className={styles.image} alt="Dreams" width={450} height={450} />
                 <p className={styles.description}>
                 <span>
-                    Dive into the intricate tapestry of your mind by deeply analyzing your thoughts, moods, and ideas. <br /> 
+                    Explore the complex landscape of your mind through profound analysis of your thoughts and feelings. <br /> 
                 </span>
                 <span>
-                    Input a thought, mood, or event into our AI-powered journal, no matter how vague or detailed.<br />
+                    Contribute any thought, dream, journey, or emotion to our AI-fueled journal, be it vague or elaborate. <br /> 
                 </span>
                 <span>
-                    Using NLP models, we categorize your thoughts and identify patterns based on deep insights.
+                    Leveraging advanced NLP algorithms, we organize your thoughts and pinpoint behavioral patterns. <br /> 
                 </span>
                 <span>
-                    Crucially, we offer insights that demystify your subconscious, bringing clarity to your inner world.
+                Most importantly, we decode your subconscious, offering a clearer understanding of your inner realm. <br />
                 </span>
                 </p>
                 {!signup ? (
