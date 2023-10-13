@@ -28,7 +28,7 @@ const Main = () => {
     }
 
     const handleSignUp = () => {
-        setSignup(true);
+        setSignup(false);
     }
 
     return (
@@ -71,7 +71,7 @@ const Main = () => {
                     </div>
                     </>
                 ) : (
-                    <SignUp handleSignUp={handleSignUp}/>
+                    <SignUp handleUserLogin={handleUserLogin}/>
                 )} 
                 </>
             )}
