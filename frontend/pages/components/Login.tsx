@@ -59,7 +59,6 @@ const Login = ({ handleUserLogin }: LoginProps) => {
                 </button>
                 <div className={styles.divBottom}>
                     <TypeformEmbed /> 
-                    <SignUp /> 
                 </div>
             </>
         </div>

@@ -310,4 +310,16 @@
 }
 
 
-
+.waitlistAndSignup {
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
+  color: #5f5f5f; /* Using the same gray */
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center; /* Centers the text */
+  text-decoration: underline;
+  /* font-style: italic;  */
+  display: block; /* Makes sure it takes up the full width so the text-align works */
+  width: 100%; /* Ensures it aligns with the width of the other components */
+  display: inline;
+}

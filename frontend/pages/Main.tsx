@@ -6,6 +6,7 @@ import SideNav from './components/SideNav';
 import Archive from './components/Archive';
 import Analysis from './components/Analysis';
 import ChatInterface from './components/ChatInterface';
+import SignUp from './components/SignUp';
 
 export enum View {
     HOME,
@@ -17,13 +18,17 @@ export enum View {
 const Main = () => {
     const [hasPermission, setHasPermission] = useState<boolean>(false);
     const [view, setView] = useState<View>(View.HOME);
-
+    const [signup, setSignup] = useState<boolean>(false); 
     const handleUserLogin = (email: string, password: string) => {
         setHasPermission(true);
     }
 
     const handleSetView = (view: View) => {
         setView(view);
+    }
+
+    const handleSignUp = () => {
+        setSignup(true);
     }
 
     return (
@@ -46,7 +51,7 @@ const Main = () => {
                 <img src="/dreams2.png" className={styles.image} alt="Dreams" width={450} height={450} />
                 <p className={styles.description}>
                 <span>
-                    Dive into the intricate tapestry of your mind by analyzing journal entries and patterns. <br /> 
+                    Dive into the intricate tapestry of your mind by deeply analyzing your thoughts, moods, and ideas. <br /> 
                 </span>
                 <span>
                     Input a thought, mood, or event into our AI-powered journal, no matter how vague or detailed.<br />
@@ -58,9 +63,16 @@ const Main = () => {
                     Crucially, we offer insights that demystify your subconscious, bringing clarity to your inner world.
                 </span>
                 </p>
-                <Login 
-                    handleUserLogin={handleUserLogin}
-                /> 
+                {!signup ? (
+                    <>
+                        <Login handleUserLogin={handleUserLogin} />
+                    <div className={styles.divBottom}>
+                        <a onClick={() => setSignup(true)} className={styles.waitlistAndSignup}>Sign Up</a>
+                    </div>
+                    </>
+                ) : (
+                    <SignUp handleSignUp={handleSignUp}/>
+                )} 
                 </>
             )}
             </main>

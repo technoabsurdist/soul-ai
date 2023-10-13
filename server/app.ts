@@ -52,6 +52,14 @@ app.post('/login', async (req, res) => {
     return res.status(400).send('Invalid email or password.');
 });
 
+app.post('/signup', async (req, res) => {
+  const { email, password } = req.body;
+  const password_hash = await bcrypt.hash(password, 10);
+  // const username = email.split('@')[0];
+  const result = await pool.query('INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING *', [email, password_hash]);
+  res.send(result.rows[0]); 
+});
+
 app.post('/entry', async (req, res) => {
   const { text, title } = req.body;
   // const userId = req.session.userId; // TODO
