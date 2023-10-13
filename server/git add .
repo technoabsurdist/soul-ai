@@ -18,18 +18,13 @@ dotenv.config();
 app.use(express.json());
 app.use(cors({
   origin: 'http://localhost:3000',
-  credentials: true, 
   allowedHeaders: ['Content-Type', 'User-Agent']
 }));
 app.use(session({
   secret: process.env.SECRET_KEY || "",
   resave: false,
   saveUninitialized: true,
-  cookie: { 
-    secure: false, 
-    httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000
-  }
+  cookie: { secure: false } // TODO: change when using HTTPS 
 }));
 
 // database
@@ -41,49 +36,40 @@ const pool = new Pool({
 
 // routes
 app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
+    const { email, password } = req.body;
 
-  const result = await pool.query('SELECT id, password_hash FROM users WHERE email = $1', [email]);
-  const user = result.rows[0];
+    const result = await pool.query('SELECT password_hash FROM users WHERE email = $1', [email]);
+    const user = result.rows[0];
 
-  if (!user) return res.status(400).send('Invalid email or password.');
+    if (!user) return res.status(400).send('Invalid email or password.');
 
-  const validPassword = await bcrypt.compare(password, user.password_hash);
-  if (validPassword) {
-    console.log("user.id", user.id)
-    req.session.userId = user.id;
-    req.session.save((err) => {
-      if(err) {
-        console.error("Session save error:", err);
-      }
-    });
-    return res.send('Logged in successfully!');
-  }
-
-  return res.status(400).send('Invalid email or password.');
+    const validPassword = await bcrypt.compare(password, user.password_hash);
+    if (validPassword) {
+      req.session.userId = user.id;
+      return res.send('Logged in successfully!');
+    }
+  
+    return res.status(400).send('Invalid email or password.');
 });
-
 
 app.post('/signup', async (req, res) => {
   const { email, password } = req.body;
   const password_hash = await bcrypt.hash(password, 10);
+  // const username = email.split('@')[0];
   const result = await pool.query('INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING *', [email, password_hash]);
   res.send(result.rows[0]); 
 });
 
 app.post('/entry', async (req, res) => {
   const { text, title } = req.body;
-  const userId = req.session.userId; 
+  const userId = req.session.userId || 1; 
   const result = await pool.query('INSERT INTO documents (text, title, user_id) VALUES ($1, $2, $3) RETURNING *', [text, title, userId]);
   res.send(result.rows[0]);
 }); 
 
 app.get('/entry', async (req, res) => {
-  const userId = req.session.userId; 
-  if (!userId) {
-    console.log("Unathorized")
-    return res.status(401).send('Unauthorized');
-  }  
+  const userId = req.session.userId || 1;
+  if (!userId) return res.status(401).send('Unauthorized');
   try {
     const result = await pool.query('SELECT * FROM documents WHERE user_id = $1', [userId]);
     return res.send(result.rows);
@@ -93,18 +79,6 @@ app.get('/entry', async (req, res) => {
   }
 });
 
-app.get('/user', async (req, res) => {
-  const userId = req.session.userId; 
-  if (!userId) return res.status(401).send('Unauthorized');
-  try {
-    const result = await pool.query('SELECT * FROM users WHERE id = $1', [userId]);
-    console.log("user", result.rows[0])
-    return res.send(result.rows[0]);
-  } catch (error) {
-    console.error('Error fetching user:', error);
-    return res.status(500).send('An error occurred while fetching user.');
-  }
-}); 
 
 app.get('/test-db', async (_req, res) => {
   try {

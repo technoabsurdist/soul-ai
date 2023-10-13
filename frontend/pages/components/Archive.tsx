@@ -12,9 +12,12 @@ const Archive = () => {
     const fetchEntries = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:5001/entry');
+        const response = await fetch('http://localhost:5001/entry', {
+          credentials: 'include',
+        });
         if (response.status === 200) {
-          setDocuments(response.data);
+          const data = await response.json();
+          setDocuments(data);
           setIsLoading(false);
         } else {
           console.error('Error fetching documents');

@@ -14,6 +14,7 @@ const Login = ({ handleUserLogin }: LoginProps) => {
         e.preventDefault();
         try {
             const response = await fetch('http://localhost:5001/login', {
+                credentials: 'include',
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),

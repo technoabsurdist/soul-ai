@@ -26,6 +26,7 @@ const PromptInput = ({ prompt }) => {
     try {
       const title = 'Testing Title 1';
       const response = await fetch('http://localhost:5001/entry', {
+        credentials: 'include',
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }, 
         body: JSON.stringify({ title: title, text: value }),

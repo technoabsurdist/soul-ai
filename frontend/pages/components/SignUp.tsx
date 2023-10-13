@@ -11,6 +11,7 @@ const SignUp = ({ handleUserLogin }) => {
         try {
             // Signup
             const signupResponse = await fetch('http://localhost:5001/signup', {
+                credentials: 'include',
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password, name }),
@@ -19,6 +20,7 @@ const SignUp = ({ handleUserLogin }) => {
             if (signupResponse.ok) {
                 // Automatically log the user in after a successful signup
                 const loginResponse = await fetch('http://localhost:5001/login', {
+                    credentials: 'include',
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password }),
