@@ -4,7 +4,7 @@ import styles from './Analysis.module.css';
 const Analysis = () => {
     return (
         <>
-            <h1 className={styles.centeredText}>Analysis coming soon!</h1>
+            <h1 className={styles.centeredText}>Insights coming soon!</h1>
         </>
     );
 };

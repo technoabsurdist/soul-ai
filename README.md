@@ -2,15 +2,18 @@
   <img src="./frontend/public/dreams2.png" alt="Dreams AI Logo" width="300">
 </p>
 
-# Dreams AI 
-
-Dreams AI is an intuitive platform designed to simplify and enhance your dream logging experience. Users can input dream details and benefit from automatic title, tag, and image generation, with the core feature offering profound insights into the deeper psychological implications of your dreams. Dive into your subconscious and uncover unique narratives with Dreams AI.
+# Soul AI 
+Dive into the intricate tapestry of your mind by analyzing journal entries and patterns. <br /> 
+Input a thought, mood, or event into our AI-powered journal, no matter how vague or detailed.<br />
+Using NLP models, we categorize your thoughts and identify patterns based on deep insights.
+Crucially, we offer insights that demystify your subconscious, bringing clarity to your inner world.
 
 ## Features
+- **Thoughts Logging**: Streamlined process for thoughts, moods, or anything-documentation in a user-friendly format.
+- **Automated Title, Tag, and Image Generation**: Effortless organization of your entries.
+- **Insight Generator**: we offer insights that demystify your subconscious, bringing clarity to your inner world.
+- **Soul Chat**: Talk to a model fine-tuned on your insights. Made just for you.  
 
-- **Dream Logging**: Streamlined process for dream documentation in a user-friendly digital format.
-- **Automated Title, Tag, and Image Generation**: Effortless organization of your dream entries.
-- **Deep Dream Analysis**: Identification and interpretation of patterns, entities, and recurring motifs.
 
 ## Frontend 
 

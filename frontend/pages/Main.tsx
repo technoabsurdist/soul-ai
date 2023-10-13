@@ -5,11 +5,13 @@ import Home from './components/Home';
 import SideNav from './components/SideNav';
 import Archive from './components/Archive';
 import Analysis from './components/Analysis';
+import ChatInterface from './components/ChatInterface';
 
 export enum View {
     HOME,
     ARCHIVE,
     INSIGHTS, 
+    CHAT,
 }
 
 const Main = () => {
@@ -36,6 +38,7 @@ const Main = () => {
                     {view === View.HOME && <Home />}
                     {view === View.ARCHIVE && <Archive />}
                     {view === View.INSIGHTS && <Analysis />}
+                    {view === View.CHAT && <ChatInterface /> }
                 </>
                  
             ) : (

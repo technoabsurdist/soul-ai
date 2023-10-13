@@ -6,6 +6,7 @@ import { ArchiveIcon } from './icons/ArchiveIcon';
 import { AnalysisIcon } from './icons/AnalysisIcon';
 import { Divider } from './icons/Divider';
 import { View } from '../Main';
+import { ChatIcon } from './icons/ChatIcon';
 
 
 interface SideNavProps {
@@ -36,6 +37,12 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
                 <AnalysisIcon /> 
                 <span className={styles.navbarItem} onClick={() => handleSetView(View.INSIGHTS)}>
                    Insights 
+                </span>
+            </div>
+            <div className={styles.iconWithText}>
+                <ChatIcon /> 
+                <span className={styles.navbarItem} onClick={() => handleSetView(View.CHAT)}>
+                   SOUL CHAT 
                 </span>
             </div>
             <div className={styles.divider}>
