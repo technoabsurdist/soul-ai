@@ -5,12 +5,14 @@ import { NewIcon } from './icons/NewIcon';
 import { ArchiveIcon } from './icons/ArchiveIcon';
 import { AnalysisIcon } from './icons/AnalysisIcon';
 import { Divider } from './icons/Divider';
+import { View } from '../Main';
 
-const SideNav = () => {
-    const [showPrompt, setShowPrompt] = useState(false)
-    const handleNewNote = () => {
-        setShowPrompt(true)
-    }
+
+interface SideNavProps {
+    handleSetView: (view: View) => void;
+}
+
+const SideNav = ({ handleSetView }: SideNavProps) => {
 
     return (
         <div className={styles.navbarParent}>
@@ -18,29 +20,29 @@ const SideNav = () => {
             <div className={styles.divider}>
                 <Divider /> 
             </div>
-            <div className={styles.iconWithText}>  {/* Apply the new class here */}
+            <div className={styles.iconWithText}>
                 <NewIcon /> 
-                <a className={styles.navbarItem} onClick={handleNewNote} href="/new">
-                   New Dream 
-                </a>
+                <span className={styles.navbarItem} onClick={() => handleSetView(View.HOME)}>
+                   New dream 
+                </span>
             </div>
             <div className={styles.iconWithText}>
                 <ArchiveIcon /> 
-                <Link className={styles.navbarItem} href="/dreams">
+                <a className={styles.navbarItem} onClick={() => handleSetView(View.ARCHIVE)}>
                    Archive 
-                </Link>
+                </a>
             </div>
             <div className={styles.iconWithText}>
                 <AnalysisIcon /> 
-                <Link className={styles.navbarItem} href="/analysis">
+                <span className={styles.navbarItem} onClick={() => handleSetView(View.ANALYSIS)}>
                     Analysis
-                </Link>
+                </span>
             </div>
             <div className={styles.divider}>
                 <Divider /> 
             </div>
             <div>
-                <Link className={styles.profileName} href="">Emilio Andere</Link>
+                <Link className={styles.profileName} href="">Admin Example</Link>
                 <Link className={styles.profileItem} href="">admin@example.com</Link>
             </div>
         </div>

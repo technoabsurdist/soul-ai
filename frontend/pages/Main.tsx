@@ -4,12 +4,24 @@ import Login from './components/Login';
 import Home from './components/Home';
 import SideNav from './components/SideNav';
 
+export enum View {
+    HOME,
+    ARCHIVE,
+    ANALYSIS
+}
+
 const Main = () => {
     const [hasPermission, setHasPermission] = useState<boolean>(true);
+    const [view, setView] = useState<View>(View.HOME);
 
     const handleUserLogin = (email: string, password: string) => {
         setHasPermission(true);
     }
+
+    const handleSetView = (view: View) => {
+        setView(view);
+    }
+
     return (
         <>
             <main className={styles.main}>
@@ -17,7 +29,7 @@ const Main = () => {
             {hasPermission ? ( 
                 <>
                     <div className={styles.navbar2}>
-                        <SideNav /> 
+                        <SideNav handleSetView={handleSetView} /> 
                     </div>
                     <Home />
                 </>
