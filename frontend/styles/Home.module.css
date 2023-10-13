@@ -11,11 +11,11 @@
 }
 
 .navbarItem {
-  padding: 15px 8px 8px 2px;  
+  padding: 16px 8px 10px 8px;  
   text-decoration: none;  
   line-height: 6px;
   margin-bottom: 5px; 
-  font-size: 16px;  
+  font-size: 15px;  
   color: #818181;  
   display: block;  
   transition: 0.3s;  
@@ -28,6 +28,7 @@
 }
 
 
+/* Editing Profile Section */ 
 .profileItem {
   padding: 10px 5px 0px 0px;  
   text-decoration: none;  
@@ -36,20 +37,31 @@
   color: #818181;  
   display: block;  
   transition: 0.3s;  
-  text-align: right;
+  text-align: left;
   text-decoration: underline;
 }
 
+.profileName {
+  padding: 10px 5px 0px 0px;  
+  text-decoration: none;  
+  line-height: 10px;
+  font-size: 8px;  
+  color: #818181;  
+  display: block;  
+  transition: 0.3s;  
+  text-align: left;
+}
+
 .profileImage {
-  width: 40px;
-  height: 40px;
+  width: 145px;
+  height: 145px;
   border-radius: 5px; 
   text-align: right; 
   align-items: right;
   align-content: right;
   margin-bottom: 5px;
   position: relative;
-  left: 85px;
+  left: 0px;
   top: 0px;
 }
 
@@ -275,12 +287,6 @@
   left: 0; 
 }
 
-.navbarProfile {
-  position: absolute; 
-  top: 0; 
-  right: 0; 
-}
-
 .navbarParent {
   padding: 2rem; 
   display: flex;
@@ -288,4 +294,15 @@
   justify-content: space-between;
   align-items: left;
   width: 100%; 
+  background-color: #efefef;
+  display: flex;
+  min-height: 100vh; /* 100% of the viewport height */
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
 }
+
+
+

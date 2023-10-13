@@ -3,7 +3,6 @@ import styles from '../styles/Home.module.css'
 import Login from './components/Login';
 import Home from './components/Home';
 import SideNav from './components/SideNav';
-import ProfileBar from './components/ProfileBar';
 
 const Main = () => {
     const [hasPermission, setHasPermission] = useState<boolean>(true);
@@ -21,9 +20,6 @@ const Main = () => {
                         <SideNav /> 
                     </div>
                     <Home />
-                    <div className={styles.navbarProfile}>
-                        <ProfileBar /> 
-                    </div>
                 </>
                  
             ) : (

@@ -5,18 +5,18 @@ import BottomHomePage from './BottomHomePage';
 
 const Home = () => {
 
-    const [showPrompt, setShowPrompt] = useState(false)
+    const [showPrompt, setShowPrompt] = useState(true)
 
     return (
         <>
-                <main className={styles.mainContent}>
-                    {showPrompt && <PromptInput 
-                        prompt="Tell me about your dream..."
-                    />}
-                </main>
-                <div>
-                    <BottomHomePage />
-                </div>
+            <main className={styles.mainContent}>
+                {showPrompt && <PromptInput 
+                    prompt="Tell me about your dream..."
+                />}
+            </main>
+            <div>
+                {/* <BottomHomePage /> */}
+            </div>
         </>
        
     );
