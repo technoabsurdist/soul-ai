@@ -41,7 +41,7 @@ const Main = () => {
                         <SideNav handleSetView={handleSetView} /> 
                     </div>
                     {view === View.HOME && <Home />}
-                    {view === View.ARCHIVE && <Archive />}
+                    {/* {view === View.ARCHIVE && <Archive />} */}
                     {view === View.INSIGHTS && <Analysis />}
                     {view === View.CHAT && <ChatInterface /> }
                 </>

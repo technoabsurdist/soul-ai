@@ -47,13 +47,13 @@
   }
   
 .docText {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     width: 85%; 
     color: #6c6c6c; 
     align-items: center; /* added property */
     text-align: center; 
     position: absolute; 
-    top: 60px; 
+    top: 72px; 
 }
 
 .expandedSquare {
