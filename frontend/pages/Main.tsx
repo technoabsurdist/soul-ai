@@ -42,6 +42,7 @@ const Main = () => {
                     <div className={styles.navbar2}>
                         <SideNav handleSetView={handleSetView} /> 
                     </div>
+                    <PromptNewInput /> 
                     {view === View.HOME && <Home />}
                     {view === View.NEW && <PromptNewInput />}
                     {view === View.INSIGHTS && <Analysis />}

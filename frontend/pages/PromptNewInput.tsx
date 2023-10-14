@@ -35,6 +35,7 @@ const PromptNewInput = (props) => {
           if (response.ok) {
             console.log('entry success');
             setValue('');
+            setIsFocused(false);
             props.afterSubmit();
           } else {
             console.error('error');
@@ -44,20 +45,22 @@ const PromptNewInput = (props) => {
         }
       };
 
-    return (
+      return (
         <>
-            <div className={isFocused ? styles.overlay : ''}>
-            <input
-                ref={inputRef}
-                className={styles.input}
-                placeholder="What are you thinking..."
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                onSubmit={submitEntry}
-            />
-            <button className={styles.submitButton} onClick={submitEntry}>Submit</button>
-            </div>
-            <Archive reload={undefined} />
+        <div className={isFocused ? styles.overlay : ''}>
+            <form onSubmit={submitEntry}>
+                <input 
+                    className={styles.input}
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
+                    placeholder="What are you thinking..."
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                />
+                <button className={styles.submitButton} type="submit">Submit</button>
+            </form>
+        </div>
+        <Archive reload={undefined} />
         </>
     );
 }
