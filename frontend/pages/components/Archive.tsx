@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import styles from './Archive.module.css';
 
-const Archive = () => {
+const Archive = ({ reload }) => {
   const [documents, setDocuments] = useState([]);
   const [selectedDoc, setSelectedDoc] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -50,7 +50,7 @@ const Archive = () => {
       document.removeEventListener('mousedown', handleDocumentClick);
       document.removeEventListener('keydown', handleEscapePress);
     };
-  }, []);
+  }, [reload]);
 
   const handleSquareClick = (doc) => {
     setSelectedDoc(doc);
@@ -63,15 +63,12 @@ const Archive = () => {
       onClick={() => handleSquareClick(doc)}
     >
       <h4 className={styles.docTitle}>{doc.title}</h4>
-      <p className={styles.docText}>{doc.text.substring(0, 245)}...</p>
+      <p className={styles.docText}>{doc.text.substring(0, 400)}...</p>
     </div>
   );
 
   return (
     <>
-      {/* <div className={styles.title}>
-        <p>Thoughts Archive</p>
-      </div> */}
      <div className={styles.grid}>
         {isLoading ? <p>Loading...</p> : documents.map(renderSquare)}
       </div>

@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import styles from '../../styles/Home.module.css';
-import { NewIcon } from './icons/NewIcon';
-import { ArchiveIcon } from './icons/ArchiveIcon';
-import { AnalysisIcon } from './icons/AnalysisIcon';
-import { Divider } from './icons/Divider';
+import NewIcon from './icons/NewIcon';
+import ArchiveIcon from './icons/ArchiveIcon';
+import AnalysisIcon from './icons/AnalysisIcon';
+import Divider from './icons/Divider';
 import { View } from '../Main';
-import { ChatIcon } from './icons/ChatIcon';
+import ChatIcon from './icons/ChatIcon';
 import SearchIcon from './icons/SearchIcon';
 
 
