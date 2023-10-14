@@ -8,7 +8,7 @@ const Home = () => {
     const [reloadTrigger, setReloadTrigger] = useState(false);
 
     const afterSubmit = () => {
-        setReloadTrigger(!reloadTrigger); // Toggle the reloadTrigger state
+        setReloadTrigger(!reloadTrigger);
     };
 
     return (

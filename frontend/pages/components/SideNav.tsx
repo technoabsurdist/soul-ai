@@ -48,7 +48,7 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
             </div>
             <div className={styles.iconWithText}>
                 <NewIcon /> 
-                <span className={styles.navbarItem} onClick={() => handleSetView(View.HOME)}>
+                <span className={styles.navbarItem} onClick={() => handleSetView(View.NEW)}>
                    New Note
                 </span>
             </div>

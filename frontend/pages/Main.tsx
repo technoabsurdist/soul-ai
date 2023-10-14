@@ -7,12 +7,14 @@ import Archive from './components/Archive';
 import Analysis from './components/Analysis';
 import ChatInterface from './components/ChatInterface';
 import SignUp from './components/SignUp';
+import PromptNewInput from './PromptNewInput';
 
 export enum View {
     HOME,
     ARCHIVE,
     INSIGHTS, 
     CHAT,
+    NEW,
 }
 
 const Main = () => {
@@ -41,7 +43,7 @@ const Main = () => {
                         <SideNav handleSetView={handleSetView} /> 
                     </div>
                     {view === View.HOME && <Home />}
-                    {/* {view === View.ARCHIVE && <Archive />} */}
+                    {view === View.NEW && <PromptNewInput />}
                     {view === View.INSIGHTS && <Analysis />}
                     {view === View.CHAT && <ChatInterface /> }
                 </>
