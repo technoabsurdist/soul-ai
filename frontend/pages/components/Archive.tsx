@@ -69,9 +69,9 @@ const Archive = () => {
 
   return (
     <>
-      <div className={styles.title}>
+      {/* <div className={styles.title}>
         <p>Thoughts Archive</p>
-      </div>
+      </div> */}
      <div className={styles.grid}>
         {isLoading ? <p>Loading...</p> : documents.map(renderSquare)}
       </div>

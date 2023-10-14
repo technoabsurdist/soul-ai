@@ -7,6 +7,7 @@ import { AnalysisIcon } from './icons/AnalysisIcon';
 import { Divider } from './icons/Divider';
 import { View } from '../Main';
 import { ChatIcon } from './icons/ChatIcon';
+import SearchIcon from './icons/SearchIcon';
 
 
 interface SideNavProps {
@@ -18,7 +19,6 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
     const [profileData, setProfileData] = useState({ name: "", email: "" });
 
     useEffect(() => {
-        // Fetch profile data from API when the component mounts
         const fetchData = async () => {
             const response = await fetch('http://localhost:5001/user', {
                 credentials: 'include',
@@ -32,11 +32,17 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
         };
 
         fetchData();
-    }, []); // Empty dependency array means this useEffect runs once when the component mounts
+    }, []);
 
     return (
         <div className={styles.navbarParent}>
             <img className={styles.profileImage} src="/dreams2.png" alt="Profile"/>
+            <div className={styles.search}>
+                <SearchIcon /> 
+                <span className={styles.navbarSearch} onClick={() => handleSetView(View.HOME)}>
+                    Search 
+                </span>
+            </div>
             <div className={styles.divider}>
                 <Divider /> 
             </div>

@@ -9,9 +9,7 @@ const Home = () => {
     return (
         <>
             <main className={styles.mainContent}>
-                {showPrompt && <PromptInput 
-                    prompt="Tell me about your dream..."
-                />}
+                {showPrompt && <PromptInput />}
             </main>
             <div>
             </div>

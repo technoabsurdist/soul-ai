@@ -1,13 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from './PromptInput.module.css';
 
-const PromptInput = ({ prompt }) => {
+const PromptInput = ( ) => {
   const [value, setValue] = useState('');
   const textAreaRef = useRef(null);
+  const [showButton, setShowButton] = useState(false);
 
   const handleTextChange = (e: any) => {
     setValue(e.target.value);
     resizeTextArea();
+    setShowButton(true); // Show button when text changes
+  };
+
+  const handleFocus = () => {
+    setShowButton(true); // Show button on focus
   };
 
   const resizeTextArea = () => {
@@ -34,7 +40,6 @@ const PromptInput = ({ prompt }) => {
       if (response.ok) {
         console.log('entry success');
         setValue('');  // Clear the text area
-        window.alert('Submitted!');  // Show an alert
       } else {
         console.error('error');
       }
@@ -52,9 +57,7 @@ const PromptInput = ({ prompt }) => {
         placeholder={"What are you thinking..."} 
         onChange={handleTextChange}
       />
-      <button onClick={submitEntry}>
-        Submit
-      </button>
+      <button className={styles.submitButton} onClick={submitEntry}>Submit</button> 
     </div>
   );
 };
