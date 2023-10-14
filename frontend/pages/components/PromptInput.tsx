@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import styles from './PromptInput.module.css';
+import styles from "./Archive.module.css"
 
 const PromptInput = (props) => {
   const [value, setValue] = useState('');
@@ -31,9 +31,6 @@ const PromptInput = (props) => {
       if (response.ok) {
         console.log('entry success');
         setValue('');
-        if (textAreaRef.current) {
-          textAreaRef.current.style.height = 'auto'; 
-        }
         props.afterSubmit();
       } else {
         console.error('error');
@@ -42,15 +39,6 @@ const PromptInput = (props) => {
       console.error('Error:', error);
     }
   };
-  
-
-  const handleFocus = () => {
-    setIsActive(true);
-  };
-
-  const handleBlur = () => {
-    setIsActive(false);
-  };
 
   return (
     <>
@@ -58,11 +46,10 @@ const PromptInput = (props) => {
       <div className={`${styles.inputWrapper} ${isActive ? styles.active : ''}`}>
         <textarea
           ref={textAreaRef}
-          className={`${styles.titleColorBorder} ${styles.expandedTextArea}`}
           value={value}
           placeholder={"What are you thinking..."}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
+          onFocus={() => setIsActive(true)}
+          onBlur={() => setIsActive(false)}
           onChange={handleTextChange}
         />
         <button className={styles.submitButton} onClick={submitEntry}>Submit</button>

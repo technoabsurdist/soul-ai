@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import styles from './Archive.module.css';
 
 const Archive = ({ reload }) => {
@@ -7,6 +6,7 @@ const Archive = ({ reload }) => {
   const [selectedDoc, setSelectedDoc] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const expandedSquareRef = useRef(null);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const fetchEntries = async () => {
@@ -81,6 +81,7 @@ const Archive = ({ reload }) => {
           <p>{selectedDoc.text}</p>
         </div>
       )}
+      {isActive && <div className={styles.backdrop}></div>}
     </>
   );
   

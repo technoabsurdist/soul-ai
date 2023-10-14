@@ -3,12 +3,63 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     position: absolute; 
-    top: 20rem; 
+    top: 5rem; 
     left: 29rem; 
 }
-  
 
-.square {
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    position: absolute; 
+    top: 1rem; 
+    left: 1rem; 
+}
+
+.inputForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40rem; 
+}
+  
+.inputText {
+    background: transparent;
+    border: none;
+    border: 2px solid #dcdcdc;
+    border-radius: 12px; 
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    font-size: 1.3rem;
+    color: #dcdcdc;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .inputField {
+    background: transparent;
+    color: transparent;
+    caret-color: rgb(93, 93, 93);
+  }
+  
+  .inputField::placeholder {
+    color: rgb(78, 78, 78);
+  }
+  
+  .submitButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .square {
     width: 250px;
     height: 300px;
     border-radius: 10px; 
@@ -20,7 +71,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    align-items: center; /* added property */
+    align-items: center; 
     position: relative; 
 }
 
@@ -37,11 +88,11 @@
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-weight: bold;
-    margin: 2px;  /* Reduced margin */
+    margin: 2px;  
     color: #5d5d5d; 
-    padding: 0;   /* No padding */
-    text-align: left; /* To center the text */
-    width: 90%;  /* Increased width */
+    padding: 0;   
+    text-align: left; 
+    width: 90%;  
     position: absolute; 
     top: 20px; 
   }
@@ -84,3 +135,31 @@
     z-index: 5;
 }
   
+.inputWrapper {
+    background-color: #ececec;
+    border-radius: 12px;
+    padding: 0.5rem; 
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    z-index: 1;
+  }
+  
+  .inputWrapper.active {
+    z-index: 9999; 
+  }
+  
+  .inputWrapper.active textarea {
+    z-index: 10000;  
+  }
+  
+  .inputWrapper.active ~ * {
+    filter: blur(5px);  
+    pointer-events: none; 
+  }
+  
+  .inputWrapper input {
+    border: none;
+    border-radius: 12px;
+    padding: 0.7rem;
+    color: #dcdcdc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }

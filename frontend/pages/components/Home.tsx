@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import styles from "../../styles/Home.module.css"
-import PromptInput from './PromptInput';
 import Archive from './Archive';
+import ReactDOM from 'react-dom';
+import ReactPaginate from 'react-paginate';
+import styles from './Home.module.css';
 
 const Home = () => {
-    const [showPrompt, _] = useState(true);
     const [reloadTrigger, setReloadTrigger] = useState(false);
 
     const afterSubmit = () => {
@@ -13,12 +13,7 @@ const Home = () => {
 
     return (
         <>
-            <main className={styles.mainContent}>
-                {showPrompt && <PromptInput afterSubmit={afterSubmit} />}
-            </main>
             <Archive reload={reloadTrigger} />
-            <div>
-            </div>
         </>
     );
 };
