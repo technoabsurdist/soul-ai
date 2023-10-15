@@ -108,6 +108,33 @@ app.get('/user', async (req, res) => {
   }
 }); 
 
+app.post('/chat', async (req, res) => {
+  const userId = req.session.userId;
+  if (!userId) return res.status(401).send('Unauthorized');
+
+  const { text } = req.body;
+
+  // const modelResponse = helpers.modelResponse(text);
+  const journalResults = await pool.query('SELECT text FROM documents WHERE user_id = $1', [userId]);
+  const journalEntries = journalResults.rows;
+  const name = await pool.query(`SELECT name FROM users WHERE id = $1`, [userId])
+
+  const response = await helpers.modelResponse(String(name), text, journalEntries);
+
+  try {
+    const result = await pool.query(
+      'INSERT INTO chats (user_input, model_response, user_id) VALUES ($1, $2, $3) RETURNING *',
+      [text, response, userId]
+    );
+    console.log("result", result.rows[0])
+    res.send(result.rows[0]);
+  } catch (error) {
+    console.error('Error inserting chat:', error);
+    return res.status(500).send('An error occurred while inserting chat.');
+  }
+});
+
+
 app.get('/test-db', async (_req, res) => {
   try {
       const response = await pool.query('SELECT NOW() as now');

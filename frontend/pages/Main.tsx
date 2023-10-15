@@ -15,10 +15,11 @@ export enum View {
     INSIGHTS, 
     CHAT,
     NEW,
+    SEARCH,
 }
 
 const Main = () => {
-    const [hasPermission, setHasPermission] = useState<boolean>(true);
+    const [hasPermission, setHasPermission] = useState<boolean>(false);
     const [view, setView] = useState<View>(View.HOME);
     const [signup, setSignup] = useState<boolean>(false); 
     const handleUserLogin = (email: string, password: string) => {
@@ -27,10 +28,6 @@ const Main = () => {
 
     const handleSetView = (view: View) => {
         setView(view);
-    }
-
-    const handleSignUp = () => {
-        setSignup(false);
     }
 
     return (

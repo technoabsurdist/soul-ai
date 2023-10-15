@@ -9,27 +9,37 @@ const ChatInterface = () => {
     setUserInput(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setChatHistory([...chatHistory, { type: 'user', text: userInput }]);
     
-    const modelReply = "This is an automated reply.";
-    // const modelReply = modelReply(userInput)
+    const response = await fetch('http://localhost:5001/chat', {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ text: userInput }),
+    });
+    const data = await response.json();
+    const modelReply = data.model_response;
+  
     setChatHistory([...chatHistory, { type: 'user', text: userInput }, { type: 'model', text: modelReply }]);
     
     setUserInput('');
   };
+  
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.centeredText}>Soul Chat</h1> 
+      <h1 className={styles.title}>Soul Chat</h1>
       <div className={styles.chatBox}>
         {chatHistory.map((entry, index) => (
           <div key={index} className={entry.type === 'user' ? styles.user : styles.model}>
-            {entry.text} 
+            {entry.text}
           </div>
         ))}
       </div>
-      <div className={styles.inputContainer}> 
+      <div className={styles.inputContainer}>
         <input type="text" className={styles.inputForm} value={userInput} onChange={handleInputChange} />
         <button className={styles.buttonForm} onClick={handleSubmit}>Send</button>
       </div>

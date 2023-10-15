@@ -18,3 +18,23 @@ export const generateTitle = async (text: string) => {
     const title = completion.choices[0].message.content || ""; 
     return title; 
 }
+
+export const modelResponse = async (username: string, text: string, journalEntries: Array<object>) => {
+    const prompt = `Original text: ${text}\nModel response:`;
+    const journalContext = journalEntries.map((entry, idx) => ({ role: "user", content: `Journal Entry ${idx + 1}: ${entry}` }));
+    const context = [
+        { role: "system", content: `You are a helpful mental-health coach, psychologist, and assistant answering questions for ${username}.` },
+        { role: "system", content: "Here's some context about the user that you should use when answering questions:" },
+        ...journalContext,
+    ]
+    const completion = await openai.chat.completions.create({
+        messages: [
+            context as any,
+            { role: "user", content: prompt}
+        ],
+        model: "gpt-3.5-turbo",
+      });
+
+    const response = completion.choices[0].message.content || ""; 
+    return response; 
+}

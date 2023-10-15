@@ -39,7 +39,7 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
             <img className={styles.profileImage} src="/dreams2.png" alt="Profile"/>
             <div className={styles.search}>
                 <SearchIcon /> 
-                <span className={styles.navbarSearch} onClick={() => handleSetView(View.HOME)}>
+                <span className={styles.navbarSearch} onClick={() => handleSetView(View.SEARCH)}>
                     Search 
                 </span>
             </div>
