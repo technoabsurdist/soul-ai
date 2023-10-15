@@ -24,12 +24,13 @@ export const modelResponse = async (username: string, text: string, journalEntri
     const journalContext = journalEntries.map((entry, idx) => ({ role: "user", content: `Journal Entry ${idx + 1}: ${entry}` }));
     const context = [
         { role: "system", content: `You are a helpful mental-health coach, psychologist, and assistant answering questions for ${username}.` },
-        { role: "system", content: "Here's some context about the user that you should use when answering questions:" },
+        { role: "system", content: "Here's some context about the user from their journal that you should have to answer questions their questions most effectively:" },
         ...journalContext,
     ]
+    console.log("context", context)
     const completion = await openai.chat.completions.create({
         messages: [
-            context as any,
+            ...context as any,
             { role: "user", content: prompt}
         ],
         model: "gpt-3.5-turbo",

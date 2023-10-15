@@ -114,12 +114,15 @@ app.post('/chat', async (req, res) => {
 
   const { text } = req.body;
 
-  // const modelResponse = helpers.modelResponse(text);
   const journalResults = await pool.query('SELECT text FROM documents WHERE user_id = $1', [userId]);
   const journalEntries = journalResults.rows;
+  const journalText = journalEntries.map((entry) => entry.text).join("\n");
+  console.log("journalResults", journalEntries)
   const name = await pool.query(`SELECT name FROM users WHERE id = $1`, [userId])
+  console.log("name", name.rows[0].name)
 
-  const response = await helpers.modelResponse(String(name), text, journalEntries);
+  const response = await helpers.modelResponse(name.rows[0].name, text, journalEntries);
+  console.log("response", response)
 
   try {
     const result = await pool.query(
@@ -132,6 +135,7 @@ app.post('/chat', async (req, res) => {
     console.error('Error inserting chat:', error);
     return res.status(500).send('An error occurred while inserting chat.');
   }
+
 });
 
 
