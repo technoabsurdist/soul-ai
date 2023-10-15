@@ -52,12 +52,6 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
                    New Note
                 </span>
             </div>
-            {/* <div className={styles.iconWithText}>
-                <ArchiveIcon /> 
-                <a className={styles.navbarItem} onClick={() => handleSetView(View.ARCHIVE)}>
-                   Archive 
-                </a>
-            </div> */}
             <div className={styles.iconWithText}>
                 <AnalysisIcon /> 
                 <span className={styles.navbarItem} onClick={() => handleSetView(View.INSIGHTS)}>
