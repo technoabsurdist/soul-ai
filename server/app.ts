@@ -18,8 +18,8 @@ dotenv.config();
 // middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'https://soul-ai.vercel.app',
-  credentials: true,
+  origin: 'http://localhost:3000',
+  credentials: true, 
   allowedHeaders: ['Content-Type', 'User-Agent']
 }));
 app.use(session({
