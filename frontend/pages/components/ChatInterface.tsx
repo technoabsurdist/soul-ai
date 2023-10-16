@@ -45,6 +45,10 @@ const ChatInterface = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Soul Chat</h1>
+      <p className={styles.subtitle}>
+        Chat with your own personal AI-based psychological assistant named Soul. <br /> 
+        Soul has access to your past entries and can help you reflect on your past experiences and emotions.
+      </p>
       <div className={styles.chatBox}>
         {chatHistory.map((entry, index) => (
           <div key={index} className={entry.type === 'user' ? styles.user : styles.model}>

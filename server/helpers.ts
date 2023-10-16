@@ -23,7 +23,7 @@ export const modelResponse = async (username: string, text: string, journalEntri
     const prompt = `Original text: ${text}\nModel response:`;
     const journalContext = journalEntries.map((entry, idx) => ({ role: "user", content: `Journal Entry ${idx + 1}: ${entry}` }));
     const context = [
-        { role: "system", content: `You are a helpful mental-health coach, psychologist, and assistant answering questions for ${username}.` },
+        { role: "system", content: `You are a helpful mental-health coach named Soul. Best psychologist out there, and assistant answering questions for ${username}.` },
         { role: "system", content: "Here's some context about the user from their journal that you should have to answer questions their questions most effectively:" },
         ...journalContext,
     ]
