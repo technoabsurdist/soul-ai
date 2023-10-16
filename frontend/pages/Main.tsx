@@ -3,7 +3,6 @@ import styles from '../styles/Home.module.css'
 import Login from './components/Login';
 import Home from './components/Home';
 import SideNav from './components/SideNav';
-import Archive from './components/Archive';
 import Analysis from './components/Analysis';
 import ChatInterface from './components/ChatInterface';
 import SignUp from './components/SignUp';
@@ -22,7 +21,8 @@ const Main = () => {
     const [hasPermission, setHasPermission] = useState<boolean>(false);
     const [view, setView] = useState<View>(View.HOME);
     const [signup, setSignup] = useState<boolean>(false); 
-    const handleUserLogin = (email: string, password: string) => {
+
+    const handleUserLogin = () => {
         setHasPermission(true);
     }
 

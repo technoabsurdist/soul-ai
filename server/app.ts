@@ -138,6 +138,18 @@ app.post('/chat', async (req, res) => {
 
 });
 
+app.get('/chat/history', async (req, res) => {
+  const userId = req.session.userId;
+  if (!userId) return res.status(401).send('Unauthorized');
+
+  const result = await pool.query('SELECT * FROM chats WHERE user_id = $1 ORDER BY timestamp ASC', [userId]);
+  const formattedHistory = result.rows.map(row => [
+    { type: 'user', text: row.user_input },
+    { type: 'model', text: row.model_response },
+  ]).flat();
+  return res.json(formattedHistory);
+});
+
 
 app.get('/test-db', async (_req, res) => {
   try {

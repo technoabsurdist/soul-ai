@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ChatInterface.module.css';
 
 const ChatInterface = () => {
   const [chatHistory, setChatHistory] = useState([]);
   const [userInput, setUserInput] = useState('');
 
+  useEffect(() => {
+    const fetchChatHistory = async () => {
+      const response = await fetch('http://localhost:5001/chat/history', {
+        credentials: 'include',
+        method: 'GET',
+      });
+      const data = await response.json();
+      setChatHistory(data);
+    };
+  
+    fetchChatHistory();
+  }, []);
+  
   const handleInputChange = (e) => {
     setUserInput(e.target.value);
   };
