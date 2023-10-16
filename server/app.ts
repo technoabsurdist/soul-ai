@@ -115,13 +115,13 @@ app.post('/chat', async (req, res) => {
   const { text } = req.body;
 
   const journalResults = await pool.query('SELECT text FROM documents WHERE user_id = $1', [userId]);
-  const journalEntries = journalResults.rows;
-  const journalText = journalEntries.map((entry) => entry.text).join("\n");
-  console.log("journalResults", journalEntries)
+  const journalText = journalResults.rows.map((entry) => {
+    return entry.text
+  }); 
   const name = await pool.query(`SELECT name FROM users WHERE id = $1`, [userId])
   console.log("name", name.rows[0].name)
 
-  const response = await helpers.modelResponse(name.rows[0].name, text, journalEntries);
+  const response = await helpers.modelResponse(name.rows[0].name, text, journalText);
   console.log("response", response)
 
   try {
