@@ -12,8 +12,10 @@
     color: #7f796f;
     border-radius: 12px;
 }
+
 .container {
-    margin-left: 17%; 
+    margin-left: 20%; 
+    zoom: 0.8; 
 }
   
 .centeredText {
