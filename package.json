@@ -1,4 +1,7 @@
 {
+  "name": "soulai",
+  "description": "AI-based Journaling",
+  "version": "1.0.0", 
   "devDependencies": {
     "tailwindcss": "^3.3.3"
   },
@@ -17,5 +20,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-  }
+  },
+  "engines": {
+    "node": "20.3.1"
+  }  
 }
