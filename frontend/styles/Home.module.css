@@ -338,7 +338,10 @@
   margin-left: 10px;
   cursor: pointer;
   color: #757575;  /* Assuming you're using the same text color as your other UI components */
-  font-size: 1.1rem;
+  font-size: 1rem;
+  border: none; 
+  outline: none; 
+  background-color: #f3f2f2;
 }
 
 

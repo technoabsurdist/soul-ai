@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import styles from '../../styles/Home.module.css';
 import NewIcon from './icons/NewIcon';
-import ArchiveIcon from './icons/ArchiveIcon';
 import AnalysisIcon from './icons/AnalysisIcon';
 import Divider from './icons/Divider';
 import { View } from '../Main';
@@ -34,14 +33,20 @@ const SideNav = ({ handleSetView }: SideNavProps) => {
         fetchData();
     }, []);
 
+    const handleSearch = () => {
+        return;
+    }
+
     return (
         <div className={styles.navbarParent}>
             <img className={styles.profileImage} src="/dreams2.png" alt="Profile"/>
             <div className={styles.search}>
                 <SearchIcon /> 
-                <span className={styles.navbarSearch} onClick={() => handleSetView(View.SEARCH)}>
-                    Search 
-                </span>
+                <input 
+                    className={styles.navbarSearch} 
+                    onClick={handleSearch}
+                    placeholder={"Search"}
+                />
             </div>
             <div className={styles.divider}>
                 <Divider /> 
